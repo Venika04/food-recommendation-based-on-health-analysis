@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome-form</title>
+    <link rel="stylesheet" href="page2.css">
+</head>
+<body>
+    <!-- Welcome Form -->
+    <section id="welcome-form">
+        <h2 id="welcome-message">Welcome to your Healthy Journey!</h2>
+        <p>Let's explore ways to maintain a healthier lifestyle, just for you.</p>
+
+        <!-- Button for Interaction -->
+        <button id="start-button" onclick="openUserInfoForm()">Let me Know More About Yourself</button>
+
+        <!-- Personalized Greeting -->
+        <div id="greeting-message" style="margin-top: 20px; font-weight: bold;"></div>
+    </section>
+
+    <!-- User Info Modal -->
+    <div id="user-info-modal" style="display:none;">
+        <h3>Tell Us About Yourself</h3>
+        <form id="user-info-form">
+            <!-- Quick fix for user_id relation... -->
+            <div class="form-group">
+                <label for="age">User Id:</label>
+                <input type="number" id="user_id" name="user_id" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">Prefer Not to Say</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="activity-level">Activity Level:</label>
+                <select id="activity-level" name="activity-level" required>
+                    <option value="">Select activity level</option>
+                    <!-- <option value="sedentary">Sedentary</option> -->
+                    <option value="low">Low Activity</option>
+                    <option value="moderate">Moderate Activity</option>
+                    <option value="high">High Activity</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dietary-preferences">Dietary Preferences:</label>
+                <select id="dietary-preferences" name="dietary-preferences" required>
+                    <option value="">Select preference</option>
+                    <option value="veg">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="nonveg">Non-Vegetarian</option>
+                </select>
+            </div>
+            <div class="form-group">
+
+                <label for="health-conditions">Health Conditions:</label>
+                <select id="health-conditions" name="health-conditions" required>
+                    <option value="">Select health-conditions</option>
+                    <option value="diabetes">Diabetes</option>
+                    <option value="hypertension">Hypertension</option>
+                    <option value="asthma">Asthma</option>
+                    <option value="heart-disease">Heart Disease</option>
+                    <option value="respiratory-infections">Respiratory Infections</option>
+                    <option value="hiv/aidsn">HIV/AIDS</option>
+                    <option value="cancer">Cancer</option>
+                    <option value="dental-health-issues">Dental Health Issues</option>
+                    <option value="kidney-stone">Kidney Stone</option>
+                    <option value="pcos/pcod">PCOS/PCOD</option>
+                </select>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" onclick="openAllergyInfoForm()">Submit</button>
+                <button type="button" onclick="closeUserInfoForm()">Close</button> 
+            </div>
+        </form>
+    </div>
+    
+    <!-- Food Allergies Modal -->
+    <div id="food-allergy-modal" style="display:none;">
+        <h3>Food Allergies</h3>
+        <form id="food-allergy-form">
+            <!-- Quick fix for user_id relation... -->
+            <div class="form-group">
+                <label for="age">User Id:</label>
+                <input type="number" id="user_id" name="user_id" required>
+            </div>    
+            <div class="form-group">
+                <label for="allergy-name">Allergy Name:</label>
+                <select id="allergy-name" name="allergy-name" required>
+                    <option value="">Select allergy type</option>
+                    <option value="lactose">Lactose</option>
+                    <option value="gluten">Gluten</option>
+                    <option value="peanut">Peanut</option>
+                    <option value="shellfish">Shellfish</option>
+                    <option value="soy">Soy</option>
+                    <option value="egg">Egg</option>
+                    <option value="fish">Fish</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="severity-level">Severity Level:</label>
+                <select id="severity-level" name="severity-level" required>
+                    <option value="">Select severity</option>
+                    <option value="mild">Mild</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="severe">Severe</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="diagnosed-date">Diagnosed Date:</label>
+                <input type="date" id="diagnosed-date" name="diagnosed-date" required>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" onclick="openRecommendationModal()">Submit</button>
+                <!-- <button type="button" onclick="submitAllergyInfo()">Submit</button> -->
+                <button type="button" onclick="closeAllergyInfoForm()">Close</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Recommendation Modal -->
+    <div id="recommendation-modal" style="display: none;">
+      <h3>Recommendations</h3>
+      <button id="Update-recommend-btn" type="button">Update Recommendations</button>
+      <button id="recommend-now-btn" type="button">Recommend Now</button>
+      <h2>Recommendations:</h2>
+      <ul id="recommendationsList"></ul>
+    </div>
+    
+
+    <!-- Recommendation Display
+    <div id="recommendation-display" style="display:none;">
+        <h3>Recommended Food Items</h3>
+        <ul id="recommendation-list"></ul>
+    </div> -->
+    <!-- Recommendations List -->
+
+<!-- <div id="recommendation-display" style="display:none;">
+
+
+</div> -->
+    <script src="page2.js"></script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

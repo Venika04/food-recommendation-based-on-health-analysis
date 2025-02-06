@@ -1,0 +1,145 @@
+/* General Styles for Dark Theme */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  h2, h3 {
+    color: #ff9800;
+  }
+  
+  p {
+    color: #b0bec5;
+  }
+  
+  /* Welcome Form */
+  #welcome-form {
+    text-align: center;
+  }
+  
+  #welcome-form button {
+    background-color: #ff9800;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  #welcome-form button:hover {
+    background-color: #ffb74d;
+  }
+  
+  #greeting-message {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  /* Modal Styling */
+  #user-info-modal, #food-allergy-modal, #recommendation-modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #616161;
+    border-radius: 5px;
+    background-color: #424242;
+    color: #ffffff;
+  }
+  
+  input::placeholder, textarea::placeholder {
+    color: #bdbdbd;
+  }
+  
+  button {
+    background-color: #ff9800;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #ffb74d;
+  }
+  #health-conditions {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 0.9rem;
+    width: 100%;
+    height: auto; /* Allows dropdown to adjust for multiple selections */
+  }
+  
+  #health-conditions option {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+  }
+  
+  #health-conditions:focus {
+    outline: 2px solid #1f7a8c;
+  }
+  
+  /* Recommendation List */
+  #recommendation-display {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #recommendation-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #recommendation-list li {
+    background-color: #1e1e1e;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
