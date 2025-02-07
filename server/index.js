@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '1804',
+    password: '',
     database: 'food_recommendation_based_on_health_analysis'
 });
 
